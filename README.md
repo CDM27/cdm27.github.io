@@ -1,6 +1,6 @@
 # CDM 2027 Website
 
-Official website for **Controllable Data Memorization for Trustworthy AI (CDM 2027)**, in conjunction with ACM TRUST 2027.
+Official website for **Controllable Data Memorization for Trustworthy AI (CDM 2027)**. Co-located with ACM TRUST 2027, Washington DC, USA.
 
 Website: <https://cdm27.github.io/>
 
@@ -10,17 +10,19 @@ Website: <https://cdm27.github.io/>
 
 | 文件 | 内容 |
 | --- | --- |
-| `index.html` | 首页：介绍、研究范围、活动形式、重要日期和联系邮箱 |
+| `index.html` | 首页：以研究主题为主标题，直接介绍 workshop；附重要日期和联系邮箱 |
 | `cfp.html` | 征稿：完整主题、重要日期、投稿要求、评审与出版政策 |
 | `organization.html` | Organizers、Web Chair、Program Committee 和联系方式 |
 | `program.html` | 暂定日程、邀请报告、录用论文和会场信息 |
 | `assets/style.css` | 所有页面共用的样式、配色和手机布局 |
 | `assets/favicon.svg` | 浏览器标签页上的 CDM 图标 |
+| `assets/washington-dc.jpg` | 首页标题区背景照片 |
 | `.nojekyll` | 让 GitHub Pages 直接发布静态文件 |
 
 用文本编辑器打开对应 HTML，搜索需要修改的英文，直接替换文字即可。常见更新位置留有 HTML 注释。
 
-- **日期**：同步修改 `index.html` 与 `cfp.html`，以及首页横幅中的日期和地点。
+- **日期**：同步修改 `index.html` 与 `cfp.html`，以及首页横幅和 `program.html` 中的日期和地点。当前投稿日期为 **December 17, 2026**，录用通知日期为 **January 15, 2027**。修改 `<time>` 标签时也更新 `datetime` 属性。2 月 1 日是组织者提交 workshop summary 的终稿时间，不能用作作者论文终稿截止日期。
+- **首页背景**：替换 `assets/washington-dc.jpg` 即可；裁切位置和深色遮罩在 `assets/style.css` 的 `.hero` 中调整。图片随仓库发布，无需外部图片服务。
 - **投稿**：在 `cfp.html` 的 `id="submission"` 区域加入投稿链接、页数、模板和匿名政策；同步修改首页的 Submission 区域。
 - **委员会**：在 `organization.html` 编辑 `people-list`，每个 `<div>` 是一人。可以给姓名添加已核实的个人主页链接。
 - **日程**：在 `program.html` 修改表格。正式日程确认后，将 Tentative Program 改为 Program，Duration 改为 Time，并注明当地时区。
@@ -85,12 +87,22 @@ git push origin main
 
 ## 当前内容与待确认事项
 
-第一版的学术介绍、征稿主题、组织者信息、暂定活动形式及出版声明来自本项目的 workshop proposal。提案文件没有放入网站仓库。
+学术介绍、征稿主题、组织者信息、暂定活动形式及出版声明来自本项目的 workshop proposal。提案文件没有放入网站仓库。首页集中介绍 workshop，CFP 直接列出征稿主题和投稿信息，避免重复的 Welcome / Scope 段落。
+
+2026-11-05 根据 [TRUST 官方 workshop timeline](https://eigtrust.acm.org/trust2027/call-for-workshop-proposals/) 更新：
+
+| 事项 | 官方时间 | 页面处理 |
+| --- | --- | --- |
+| Workshop paper submission | December 12–31, 2026 | CDM 选定 December 17, 2026 |
+| Workshop paper notification | January 15–31, 2027 | CDM 选定最早的 January 15, 2027 |
+| Camera-ready workshop summary | February 1, 2027 | 组织者提交 summary，非作者论文终稿 |
+| Program and materials available | February 5, 2027 | 首页与 CFP |
+| ACM TRUST 2027 | March 7–9, 2027 | 会议日期；CDM 具体日期仍待确认 |
 
 以下信息尚未在 Proposal 中确定，因此网站使用 TBA 或明确的待公布说明；上线或发出正式 CFP 前按会议最终要求补齐：
 
-- Workshop 日期、会场及 ACM TRUST 2027 官方链接。
-- 投稿、通知及 camera-ready 日期与时区。
+- CDM 具体日期和会议室（会议地点 Washington DC 和官方链接已补充）。
+- 投稿截止时区及作者论文 camera-ready 日期。
 - 投稿系统链接、论文类别、页数、格式和匿名政策。
 - 最终出版政策及 proceedings 信息。
 - 确认的 Program Committee、邀请嘉宾、个人主页链接。
@@ -98,4 +110,8 @@ git push origin main
 
 Workshop 邮箱使用创建组织时指定的 `cdm27.tpc@gmail.com`；Proposal 中的 primary contact 也保留在 Organization 页面。
 
-第一版只写入本地工作区，是否已经发布请以 GitHub Pages 的实际部署状态为准。
+修改后按上面的步骤 commit 和 push，是否已经发布请以 GitHub Pages 的实际部署状态为准。
+
+## 背景照片来源
+
+首页使用 Duane Lempke 拍摄的华盛顿 DC National Mall 实景照片，来自 [Wikimedia Commons: NationalMall.jpg](https://commons.wikimedia.org/wiki/File:NationalMall.jpg)，采用 [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) 许可。原图保存在 `assets/washington-dc.jpg`；页面仅使用 CSS 裁切和深色遮罩。
