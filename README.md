@@ -139,4 +139,4 @@ Workshop 邮箱统一使用创建组织时指定的 `cdm27.tpc@gmail.com`，不�
 
 ## 背景照片来源
 
-首页使用 Duane Lempke 拍摄的华盛顿 DC National Mall 实景照片，来自 [Wikimedia Commons: NationalMall.jpg](https://commons.wikimedia.org/wiki/File:NationalMall.jpg)，采用 [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) 许可。原图保存在 `assets/washington-dc.jpg`；页面仅使用 CSS 裁切和深色遮罩。
+首页使用美国国家公园管理局的 [National Mall, Washington D.C.](https://npgallery.nps.gov/AssetDetail/d1a228f0-88be-4142-9f99-5264e049cf33) 照片；官方标注摄影者为 NPS staff，使用限制为 Public domain。原图保存在 `assets/washington-dc.jpg`；页面仅使用 CSS 裁切和深色遮罩。
