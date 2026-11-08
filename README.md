@@ -1,142 +1,119 @@
 # CDM 2027 Website
 
-Official website for **Controllable Data Memorization for Trustworthy AI (CDM 2027)**. Co-located with ACM TRUST 2027, Washington DC, USA.
+Controllable Data Memorization for Trustworthy AI (CDM 2027) 的静态网站项目。
 
-Website: <https://cdm27.github.io/>
+网站地址：<https://cdm27.github.io/>
 
-纯 HTML + CSS 静态网站。没有框架、JavaScript、包管理器、外部字体或构建依赖，可以直接编辑和部署到 GitHub Pages。
+项目使用 HTML 和 CSS，无需安装依赖或执行构建，可以直接用于 GitHub Pages。请使用 UTF-8 编码编辑文件。
 
-## 文件与修改位置
+## 页面分工
 
 | 文件 | 内容 |
 | --- | --- |
-| `index.html` | 首页：以研究主题为主标题，直接介绍 workshop；附重要日期和联系邮箱 |
-| `cfp.html` | Call for Papers：征稿主题、重要日期、出版声明和投稿页入口 |
-| `submission.html` | Paper Submission：投稿入口、论文要求、评审流程和投稿咨询 |
-| `organization.html` | Committees：General Chairs、Web and Publicity Chair、Program Committee |
-| `program.html` | Technical Program：当前为 To be announced，确认后再加入具体安排 |
-| `venue.html` | Venue：会议地点、住宿交通和注册参会信息 |
-| `assets/style.css` | 所有页面共用的样式、配色和手机布局 |
-| `assets/favicon.svg` | 浏览器标签页上的 CDM 图标 |
-| `assets/washington-dc.jpg` | 首页标题区背景照片 |
-| `.nojekyll` | 让 GitHub Pages 直接发布静态文件 |
+| `index.html` | Workshop 简介、objectives、重要日期及联系入口 |
+| `cfp.html` | 完整研究范围、重要日期、投稿入口及 publication statement |
+| `submission.html` | 投稿状态、关键日期、稿件要求及审稿流程 |
+| `organization.html` | 主席、Web and Publicity Chair、Program Committee |
+| `program.html` | Technical Program，当前保留待公布状态 |
+| `venue.html` | 地点、会议日期、旅行及参会信息 |
+| `assets/style.css` | 六页共用的配色、排版、响应式及打印样式 |
+| `assets/site.js` | 导航高度同步、CFP 目录的当前位置标记及小屏折叠 |
+| `assets/washington-dc.jpg` | 最新版项目提供的 Washington, DC 照片 |
 
-用文本编辑器打开对应 HTML，搜索需要修改的英文，直接替换文字即可。常见更新位置留有 HTML 注释。
+## 已采用的内容约定
 
-- **日期**：同步修改 `index.html` 与 `cfp.html`，以及首页横幅和 `venue.html` 中的日期和地点。当前投稿日期为 **December 17, 2026**，录用通知日期为 **January 15, 2027**。修改 `<time>` 标签时也更新 `datetime` 属性。2 月 1 日是组织者提交 workshop summary 的终稿时间，不能用作作者论文终稿截止日期。
-- **首页背景**：替换 `assets/washington-dc.jpg` 即可；裁切位置和深色遮罩在 `assets/style.css` 的 `.hero` 中调整。图片随仓库发布，无需外部图片服务。
-- **投稿**：在 `submission.html` 的 Submission Portal 中加入确认后的 CDM 投稿链接，在 Manuscript Requirements 中补充页数、模板和匿名政策。不要将主会投稿系统地址或 9 页规则直接当作 workshop 要求。首页和 CFP 均链接到该页面。
-- **委员会**：在 `organization.html` 编辑 `people-list`，每个 `<div>` 是一人。可以给姓名添加已核实的个人主页链接。
-- **日程**：在 `program.html` 的 `main` 区域替换 To be announced。按实际收稿及邀请情况填写，不必沿用 Proposal 的具体场次和时长；正式安排需注明当地时区。
-- **会场**：在 `venue.html` 补充确认后的具体会场、会议室、酒店、交通及注册信息。
-- **联系邮箱**：网站统一使用 `cdm27.tpc@gmail.com`。更换时在六个 HTML 文件中全局替换，保留链接的 `mailto:` 前缀。
-- **颜色**：修改 `assets/style.css` 顶部 `:root` 内的颜色变量即可。
-- **导航**：六个页面的导航是普通 HTML；增加或重命名页面时同步修改六处。`aria-current="page"` 只放在当前页面的链接上。为保留旧链接，Committees 和 Technical Program 仍使用 `organization.html`、`program.html`。
-- **样式缓存**：当前六页共用 `assets/style.css?v=20261107`。修改 CSS 后可同步更新版本参数，帮助浏览器获取新样式。
+- 六位组织者的职务为 **Program and Organisational Chairs**，按姓氏字母顺序排列。
+- Chairs and Program Committee members use the same plain list: one name and affiliation per line.
+- Congwei Zhang 的职务为 **Web and Publicity Chair**。
+- 所有对外咨询统一使用 **cdm27.tpc@gmail.com**，只在固定页脚显示。正文不再单独设置 Contact 区块或目录入口，也不另列组织者个人邮箱。
+- Technical Program 当前保留待公布状态，不将 proposal 中的暂定议程当作正式日程发布。
+- 首页聚焦 CDM 自身的信息，只展示 workshop 日期状态；主会信息通过会议链接访问。
+- 首页背景保留最新版原图，通过 CSS 放大裁切避开扫描黑边，并调整叠加层。原始照片文件未改动。
+- 六页统一引用 CSS 版本 `4e039c794ccf` 和共享脚本版本 `8454ea980f96`。
+- 顶部导航滚动时保持可见。浏览器放大或视口宽度不超过 1020px 时，导航收为 Menu 按钮，展开为纵向列表，支持再次点击、Escape 和点击外部收起。
+- 五个内页均使用页内目录。桌面端目录保持在侧栏，小屏幕上收为导航下方的可展开目录。
+- 正文统一为 18px，首页日期为 19–20px。顶部导航和页内目录为 14px，目录分组为 13px；手机和放大后的布局不缩小正文。
+- Organising Chairs、Web and Publicity Chair 和 Program Committee 统一使用逐行人员名单，姓名和单位在同一行展示。
+- Technical Program 页面只保留 CDM 自身的日期状态，不展示主会时间。
+- 页脚始终固定在窗口底部，使用白底细分隔线，显示 CDM 2027、workshop 名称、所属会议、地点及统一咨询邮箱。手机端压缩重复的长标题。共享脚本测量页脚的实际高度，为正文预留底部空间，并约束页内目录和展开菜单的高度；缩放或换行时自动更新。
+- 单位显示使用 UMass Boston、MBZUAI、University of Ottawa、TU Berlin、KAUST、RMIT University 和 CityUHK。完整名称保留在悬停提示中。
+- 委员会按 Program and Organisational Chairs、Program Committee、Web and Publicity Chair 排列。后续 PC 使用相同的 people-list 样式。
 
-添加人员示例：
-
-```html
-<div>
-  <dt><a href="https://example.edu/">Name</a></dt>
-  <dd>University, Country</dd>
-</div>
-```
-
-添加投稿链接示例（用实际投稿地址替换示例 URL）：
+PC 成员卡片沿用以下结构，加入已确认的姓名、单位和主页即可：
 
 ```html
-<a href="https://example.com/submission">Submit a paper</a>
+<ul class="people-list">
+  <li><a class="person-name" href="https://example.edu/">Member Name</a><span class="affiliation" title="Full Institution Name">, Institution</span></li>
+</ul>
 ```
+- 首页 About 使用一致字号；Objectives 围绕 Mechanistic Understanding、Principled Methods 和 Rigorous Validation and Fundamental Limits。
 
-使用相对路径，例如 `assets/style.css` 或 `program.html`，以便网站在本地和 GitHub Pages 上都能正常打开。
+## 需要后续确认的内容
 
-## 本地预览
-
-可以直接双击 `index.html`，然后点击导航查看其他页面。
-
-也可以在仓库目录运行：
-
-```bash
-python3 -m http.server 8000 --bind 127.0.0.1
-```
-
-浏览器访问 <http://127.0.0.1:8000/>。修改后刷新页面即可。终端按 Ctrl+C 停止服务。
-
-## GitHub Pages 发布
-
-仓库 **Settings → Pages → Build and deployment**：
-
-- Source：**Deploy from a branch**
-- Branch：**main**
-- Folder：**/(root)**
-
-保存后，推送到 `main` 的内容将自动部署。无需自己配置工作流。
-
-日常更新前，先确认没有尚未保存或提交的本地修改，再运行：
-
-```bash
-git pull --ff-only
-```
-
-修改并本地检查后：
-
-```bash
-git add index.html cfp.html submission.html organization.html program.html venue.html assets README.md .nojekyll .gitignore
-git commit -m "Update CDM 2027 website"
-git push origin main
-```
-
-在 GitHub 的 **Actions** 页面查看部署结果，成功后访问网站。也可以直接在 GitHub 网页编辑单个 HTML 并提交，触发同样的发布流程。
-
-## 当前内容与待确认事项
-
-学术介绍、征稿主题、组织者信息、活动形式及出版声明来自本项目的 workshop proposal。提案文件没有放入网站仓库。首页集中介绍 workshop，CFP 列出征稿主题、日期和出版声明，投稿细节单独放在 Paper Submission。
-
-2026-11-05 根据 [TRUST 官方 workshop timeline](https://eigtrust.acm.org/trust2027/call-for-workshop-proposals/) 更新：
-
-| 事项 | 官方时间 | 页面处理 |
+| 项目 | 当前状态 | 更新位置 |
 | --- | --- | --- |
-| Workshop paper submission | December 12–31, 2026 | CDM 选定 December 17, 2026 |
-| Workshop paper notification | January 15–31, 2027 | CDM 选定最早的 January 15, 2027 |
-| Camera-ready workshop summary | February 1, 2027 | 组织者提交 summary，非作者论文终稿 |
-| Program and materials available | February 5, 2027 | 首页与 CFP |
-| ACM TRUST 2027 | March 7–9, 2027 | 会议日期；CDM 具体日期仍待确认 |
+| CDM 投稿系统地址 | 待公布 | `submission.html` 的 Submission Portal 区域；随后同步首页 |
+| 投稿类别、页数、模板、匿名规则 | 待公布 | `submission.html` 的 Manuscript Requirements 区域 |
+| 投稿截止时区 | 待公布 | 首页、CFP 和 Submission 的日期说明 |
+| Paper camera-ready deadline | 待公布 | 首页、CFP 和 Submission |
+| Workshop 具体日期、时段、会场和会议室 | 待公布 | 首页 Hero、日期区域、Program 和 Venue |
+| Program Committee | 待公布 | `organization.html` |
+| Technical Program、讲者和论文名单 | 待公布 | `program.html` |
+| 注册、交通、酒店和参会方式 | 待公布 | `venue.html` |
 
-以下信息尚未在 Proposal 中确定，因此网站使用 TBA 或明确的待公布说明；上线或发出正式 CFP 前按会议最终要求补齐：
+当前保留原项目设定的投稿截止日期 **December 17, 2026** 和通知日期 **January 15, 2027**。修改时请同步首页、CFP 和 Submission。**February 5, 2027** 是 Program and Materials 日期。会议方的 **February 1** workshop-summary 截止日期属于组织者提交材料的节点，不能代替论文 camera-ready 日期。
 
-- CDM 具体日期和会议室（会议地点 Washington DC 和官方链接已补充）。
-- 投稿截止时区及作者论文 camera-ready 日期。
-- 投稿系统链接、论文类别、页数、格式和匿名政策。
-- 最终出版政策及 proceedings 信息。
-- 确认的 Program Committee、邀请嘉宾、个人主页链接。
-- 正式日程、录用论文和注册信息。
+CFP 中的 publication statement 按 proposal 和会议要求保留：录用论文将被考虑收入 proceedings，不应改写成所有录用论文均保证发表。
 
-Workshop 邮箱统一使用创建组织时指定的 `cdm27.tpc@gmail.com`，不再单列 primary contact。
+## 本地查看
 
-## 2026-11-06 会议决议落实
+可以直接双击 `index.html`，也可以在项目根目录运行：
 
-已在网页落实：
+```bash
+python -m http.server 8000 --bind 127.0.0.1
+```
 
-- 导航改为 Home / Call for Papers / Paper Submission / Committees / Technical Program / Venue。
-- 简化 CFP 引导句，保留完整 Topics of Interest；投稿说明移到独立页面。
-- 移除具体暂定日程与时长，Technical Program 先显示 To be announced。
-- 六位 Workshop Organizers 改称 General Chairs；Congwei Zhang 改称 Web and Publicity Chair。
-- 移除 Primary contact 标记和单列的个人邮箱，统一指向公共邮箱。
-- 清理 CFP 中孤立的 2 月 1 日 summary 截止解释。
+访问 <http://127.0.0.1:8000/>。检查桌面、平板和手机宽度下的六页显示，包括导航、标题换行、图片裁切、卡片、表格和链接焦点。
 
-后续跟进（不作为已确认内容发布）：
+## 维护方式
 
-| 事项 | 跟进 |
-| --- | --- |
-| Workshop 页数、模板、匿名规则与投稿入口 | 陶又铭向主会 chairs 确认后更新 Paper Submission |
-| Best Paper Award 数量和其他奖项 | 待陶又铭确认；如最终有 poster，再考虑 Best Poster Award |
-| 公共邮箱自动转发 | 另行配置转发给陶又铭；本次网页修改不涉及邮箱设置 |
-| GitHub 协作 | 邀请陶又铭加入现有仓库并接受邀请；需要其 GitHub 账号 |
-| Keynote | 双方寻找候选人；暂考虑两位、每位约 30 分钟，可视收稿情况调整 |
+- 每页独立保存 HTML；共用的导航和页脚需要在六页同步维护。
+- 每页导航只保留一个 `aria-current="page"`。
+- 保留被其他页面引用的 section IDs，例如 CFP 的 `important-dates` 和五类研究主题。
+- 日期用 `<time datetime="YYYY-MM-DD">` 标记，同时修改显示文本和 `datetime`。
+- 配色、宽度、间距和响应式断点集中在 `assets/style.css`。
+- 更新共享资源后，同步六页的版本参数。只有照片文件变更时才需要更新 CSS 中的照片版本参数。
+- 背景图片的裁切和遮罩在 `.hero::before` 与 `.hero::after` 中调整。
 
-修改后按上面的步骤 commit 和 push，是否已经发布请以 GitHub Pages 的实际部署状态为准。
+## GitHub Pages
 
-## 背景照片来源
+在仓库 **Settings → Pages → Build and deployment** 中设置：
 
-首页使用美国国家公园管理局的 [National Mall, Washington D.C.](https://npgallery.nps.gov/AssetDetail/d1a228f0-88be-4142-9f99-5264e049cf33) 照片；官方标注摄影者为 NPS staff，使用限制为 Public domain。原图保存在 `assets/washington-dc.jpg`；页面仅使用 CSS 裁切和深色遮罩。
+- Source: **Deploy from a branch**
+- Branch: **main**
+- Folder: **/(root)**
+
+更新压缩包包含网站文件，不含 `.git` 历史。将文件覆盖到现有 checkout 中，检查 diff 后再 commit 和 push。推送到配置的 Pages 分支会更新线上网站。
+
+## 内容与图片来源
+
+研究范围、objectives、组织者和审稿安排参考用户提供的 **CDM_Proposal___TRUST_2027.pdf**；六页结构及图片采用用户提供的最新版项目。
+
+- [ACM TRUST 2027](https://eigtrust.acm.org/trust2027/)
+- [Call for Workshop Proposals](https://eigtrust.acm.org/trust2027/call-for-workshop-proposals/)
+- [National Mall, Washington D.C. — NPS](https://npgallery.nps.gov/AssetDetail/d1a228f0-88be-4142-9f99-5264e049cf33)
+
+图片来源记录沿用最新版项目 README：作者 NPS staff，Public domain。文件位于 `assets/washington-dc.jpg`。
+
+
+## Shared visual system (November 8, 2026)
+
+- All six pages use one shared Arial-based font stack, header, footer, stylesheet version, and script version.
+- Body text remains 18px. The header is 64px tall with 14px navigation links. Page-section links are 14px with 13px topic links and a small section label.
+- The fixed footer contains the workshop identity, host conference, location, and one enquiry address. It is compact on narrow screens; its measured height reserves space below content.
+- Stable scrollbar space keeps the header aligned when moving between short and long pages.
+- Publish all six HTML files and the complete assets directory together. Do not upload only index.html. Each shared-resource change requires updating its version on every page.
+
+- Committee listings use plain text rows without cards or borders. The Committees page title carries one inline note `(alphabetical order)`, which applies to names within every group.
+
+- Topics of Interest is one continuous list. Its page index contains only the parent Topics of Interest link.
