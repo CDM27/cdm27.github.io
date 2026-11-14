@@ -1,12 +1,10 @@
-/* Shared navigation, fixed-frame sizing, and inner-page section indexes. */
+/* Shared navigation, header sizing, and inner-page section indexes. */
 (() => {
   const header = document.querySelector('.site-header');
-  const footer = document.querySelector('.site-footer');
   const root = document.documentElement;
   const headerHeight = () => header ? Math.ceil(header.getBoundingClientRect().height) : 0;
-  const syncFrame = () => {
+  const syncHeader = () => {
     root.style.setProperty('--header-height', `${headerHeight()}px`);
-    root.style.setProperty('--footer-height', `${footer ? Math.ceil(footer.getBoundingClientRect().height) : 0}px`);
   };
   const menuButton = header?.querySelector('.menu-toggle');
   if (menuButton) {
@@ -34,13 +32,12 @@
       }
     });
   }
-  syncFrame();
+  syncHeader();
   if ('ResizeObserver' in window) {
-    const frameObserver = new ResizeObserver(syncFrame);
-    if (header) frameObserver.observe(header);
-    if (footer) frameObserver.observe(footer);
+    const headerObserver = new ResizeObserver(syncHeader);
+    if (header) headerObserver.observe(header);
   }
-  window.addEventListener('resize', syncFrame, { passive: true });
+  window.addEventListener('resize', syncHeader, { passive: true });
 
   const toc = document.querySelector('.page-toc');
   if (!toc) return;
