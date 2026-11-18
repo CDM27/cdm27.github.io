@@ -10,9 +10,9 @@ Controllable Data Memorization for Trustworthy AI (CDM 2027) 的静态网站项�
 
 | 文件 | 内容 |
 | --- | --- |
-| `index.html` | Workshop 简介、objectives、重要日期及联系入口 |
+| `index.html` | Workshop 简介、重要日期、征稿主题、投稿及联系入口 |
 | `cfp.html` | 完整研究范围、重要日期、投稿入口及 publication statement |
-| `submission.html` | 投稿指南、关键日期、CMT 入口、稿件要求、审稿流程及出版与报告说明 |
+| `submission.html` | CMT 入口、投稿截止时间、稿件要求、审稿流程及出版与报告说明 |
 | `organization.html` | 主席、Web and Publicity Chair、Program Committee |
 | `program.html` | Technical Program，当前保留待公布状态 |
 | `venue.html` | 地点、会议日期、旅行及参会信息 |
@@ -23,29 +23,30 @@ Controllable Data Memorization for Trustworthy AI (CDM 2027) 的静态网站项�
 ## 已采用的内容约定
 
 - 六位组织者的职务为 **Program and Organisational Chairs**，按姓氏字母顺序排列。
-- Chairs and Program Committee members use the same plain list: one name and affiliation per line.
 - Congwei Zhang 的职务为 **Web and Publicity Chair**。
-- 所有对外咨询统一使用 **cdm27.tpc@gmail.com**，邮箱显示在首页 Paper Submission 区域的 CMT 链接下方。
+- 投稿咨询使用 **cdm27.tpc@gmail.com**，工作坊一般咨询由 **Youming Tao（tao@ccs-labs.org）** 处理。首页列出两类联系方式，投稿页展示投稿咨询邮箱。
 - Technical Program 当前保留待公布状态，不将 proposal 中的暂定议程当作正式日程发布。
-- 首页首屏显示投稿截止时间和 Submission instructions 链接，workshop 日期状态在 Important Dates 中查看。
+- 首页首屏居中显示工作坊标题和投稿截止时间。简介和下方链接共用居中的内容栏。Important Dates 从投稿截止时间开始列出五个节点，宽屏横排、窄屏竖排。
 - 首页背景保留最新版原图，通过 CSS 放大裁切避开扫描黑边，并调整叠加层。原始照片文件未改动。
-- 六页统一引用 CSS 版本 `cbe42d941dc9` 和共享脚本版本 `b43b7b5dd278`。
+- 六页统一引用 CSS 版本 `e467651f06f2` 和共享脚本版本 `b43b7b5dd278`。
 - 顶部导航滚动时保持可见。浏览器放大或视口宽度不超过 1020px 时，导航收为 Menu 按钮，展开为纵向列表，支持再次点击、Escape 和点击外部收起。
 - 五个内页均使用页内目录。桌面端目录保持在侧栏，小屏幕上收为导航下方的可展开目录。
-- 正文统一为 18px，首页日期为 19–20px。顶部导航和页内目录为 14px，目录分组为 13px；手机和放大后的布局不缩小正文。
-- Organising Chairs、Web and Publicity Chair 和 Program Committee 统一使用逐行人员名单，姓名和单位在同一行展示。
+- 正文统一为 18px，首页日期为 19px。顶部导航和页内目录为 14px，目录分组为 13px；手机和放大后的布局不缩小正文。
+- 组织者、Program Committee 和 Web and Publicity Chair 使用同一人员网格。姓名和单位分行展示，桌面三列，较窄屏幕依次收为两列和一列。
 - Technical Program 页面只保留 CDM 自身的日期状态，不展示主会时间。
-- 单位显示使用 UMass Boston、MBZUAI、University of Ottawa、TU Berlin、KAUST、RMIT University 和 CityUHK。完整名称保留在悬停提示中。
+- 成员单位后标注所在国家或地区，单位的完整名称保留在悬停提示中。
 - 委员会按 Program and Organisational Chairs、Program Committee、Web and Publicity Chair 排列。后续 PC 使用相同的 people-list 样式。
 
-PC 成员卡片沿用以下结构，加入已确认的姓名、单位和主页即可：
+PC 名单公布后，使用以下结构填写姓名、单位和主页：
 
 ```html
-<ul class="people-list">
-  <li><a class="person-name" href="https://example.edu/">Member Name</a><span class="affiliation" title="Full Institution Name">, Institution</span></li>
+<ul class="people-list" role="list">
+  <li>
+    <a class="person-name" href="https://example.edu/">Member Name</a>
+    <span class="affiliation" title="Full Institution Name">Institution, Country or Region</span>
+  </li>
 </ul>
 ```
-- 首页 About 使用一致字号；Objectives 围绕 Mechanistic Understanding、Principled Methods 和 Rigorous Validation and Fundamental Limits。
 
 投稿入口为 <https://cmt3.research.microsoft.com/TRUST2027/>，已同步到首页、CFP 和 Paper Submission 页面。时区参考 [TRUST 2027 Authors Guidelines](https://eigtrust.acm.org/trust2027/authors-guidelines/)。用户已确认 workshop 采用与主会相同的稿件要求：ACM SIGCONF 双栏模板、最多 9 页（含附录，参考文献和 GenAI Usage Disclosure 不计入）、双盲审稿、PDF 投稿。Submission Guidelines 已据此更新，未设置单独的 short、SoK 或 position paper 类别。主会日期不适用于 CDM。
 
@@ -53,7 +54,7 @@ PC 成员卡片沿用以下结构，加入已确认的姓名、单位和主页�
 
 | 项目 | 当前状态 | 更新位置 |
 | --- | --- | --- |
-| Paper camera-ready deadline | 待公布 | 首页、CFP 和 Submission |
+| Paper camera-ready deadline | 待公布 | 首页和 CFP |
 | Workshop 具体日期、时段、会场和会议室 | 待公布 | 首页 Important Dates、Program 和 Venue |
 | Program Committee | 待公布 | `organization.html` |
 | Technical Program、讲者和论文名单 | 待公布 | `program.html` |
@@ -108,10 +109,10 @@ python -m http.server 8000 --bind 127.0.0.1
 
 - All six pages use one shared Arial-based font stack, header, stylesheet version, and script version.
 - Body text remains 18px. The header is 64px tall with 14px navigation links. Page-section links are 14px with 13px topic links and a small section label.
-- On wide screens, the homepage hero places the submission deadline and instructions to the right of the workshop title. On phones, they appear below it.
+- The homepage centers the workshop title and deadline. Submission instructions, the CMT link, and both enquiry contacts sit below the workshop introduction.
 - Stable scrollbar space keeps the header aligned when moving between short and long pages.
 - Publish all six HTML files and the complete assets directory together. Do not upload only index.html. Each shared-resource change requires updating its version on every page.
 
-- Committee listings use plain text rows without cards or borders. The Committees page title carries one inline note `(alphabetical order)`, which applies to names within every group.
+- Committee entries use a three-column grid on wide screens, with the affiliation below each name. The Committees page title carries one inline note `(alphabetical order)`, which applies to names within every group.
 
 - Topics of Interest groups examples under five thematic headings. The page index links to the overall Topics of Interest section.
