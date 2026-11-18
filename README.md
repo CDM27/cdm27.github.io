@@ -25,17 +25,16 @@ Controllable Data Memorization for Trustworthy AI (CDM 2027) 的静态网站项�
 - 六位组织者的职务为 **Program and Organisational Chairs**，按姓氏字母顺序排列。
 - Chairs and Program Committee members use the same plain list: one name and affiliation per line.
 - Congwei Zhang 的职务为 **Web and Publicity Chair**。
-- 所有对外咨询统一使用 **cdm27.tpc@gmail.com**，只在首页底部的普通页脚显示。正文不再单独设置 Contact 区块或目录入口，也不另列组织者个人邮箱。
+- 所有对外咨询统一使用 **cdm27.tpc@gmail.com**，邮箱显示在首页 Paper Submission 区域的 CMT 链接下方。
 - Technical Program 当前保留待公布状态，不将 proposal 中的暂定议程当作正式日程发布。
-- 首页聚焦 CDM 自身的信息，只展示 workshop 日期状态；主会信息通过会议链接访问。
+- 首页首屏显示投稿截止时间和 Submission instructions 链接，workshop 日期状态在 Important Dates 中查看。
 - 首页背景保留最新版原图，通过 CSS 放大裁切避开扫描黑边，并调整叠加层。原始照片文件未改动。
-- 六页统一引用 CSS 版本 `e73c64de600d` 和共享脚本版本 `b43b7b5dd278`。
+- 六页统一引用 CSS 版本 `cbe42d941dc9` 和共享脚本版本 `b43b7b5dd278`。
 - 顶部导航滚动时保持可见。浏览器放大或视口宽度不超过 1020px 时，导航收为 Menu 按钮，展开为纵向列表，支持再次点击、Escape 和点击外部收起。
 - 五个内页均使用页内目录。桌面端目录保持在侧栏，小屏幕上收为导航下方的可展开目录。
 - 正文统一为 18px，首页日期为 19–20px。顶部导航和页内目录为 14px，目录分组为 13px；手机和放大后的布局不缩小正文。
 - Organising Chairs、Web and Publicity Chair 和 Program Committee 统一使用逐行人员名单，姓名和单位在同一行展示。
 - Technical Program 页面只保留 CDM 自身的日期状态，不展示主会时间。
-- 页脚仅在首页显示，随正文滚动，使用白底细分隔线，显示 CDM 2027、workshop 名称、所属会议、地点及统一咨询邮箱。手机端压缩重复的长标题；内页不再显示页脚，也不预留页脚空间。共享脚本只同步顶部导航高度。
 - 单位显示使用 UMass Boston、MBZUAI、University of Ottawa、TU Berlin、KAUST、RMIT University 和 CityUHK。完整名称保留在悬停提示中。
 - 委员会按 Program and Organisational Chairs、Program Committee、Web and Publicity Chair 排列。后续 PC 使用相同的 people-list 样式。
 
@@ -55,7 +54,7 @@ PC 成员卡片沿用以下结构，加入已确认的姓名、单位和主页�
 | 项目 | 当前状态 | 更新位置 |
 | --- | --- | --- |
 | Paper camera-ready deadline | 待公布 | 首页、CFP 和 Submission |
-| Workshop 具体日期、时段、会场和会议室 | 待公布 | 首页 Hero、日期区域、Program 和 Venue |
+| Workshop 具体日期、时段、会场和会议室 | 待公布 | 首页 Important Dates、Program 和 Venue |
 | Program Committee | 待公布 | `organization.html` |
 | Technical Program、讲者和论文名单 | 待公布 | `program.html` |
 | 注册、交通、酒店和参会方式 | 待公布 | `venue.html` |
@@ -76,7 +75,7 @@ python -m http.server 8000 --bind 127.0.0.1
 
 ## 维护方式
 
-- 每页独立保存 HTML；共用导航需要在六页同步维护，页脚仅维护 `index.html`。
+- 每页独立保存 HTML，共用导航需要在六页同步维护。
 - 每页导航只保留一个 `aria-current="page"`。
 - 保留被其他页面引用的 section IDs，例如 CFP 的 `important-dates` 和五类研究主题。
 - 普通日期用 `<time datetime="YYYY-MM-DD">` 标记；投稿截止时间使用包含时间及 UTC 偏移的 `datetime`，同时维护时区说明。
@@ -107,12 +106,12 @@ python -m http.server 8000 --bind 127.0.0.1
 
 ## Shared visual system (November 8, 2026)
 
-- All six pages use one shared Arial-based font stack, header, stylesheet version, and script version. Only the homepage includes a footer.
+- All six pages use one shared Arial-based font stack, header, stylesheet version, and script version.
 - Body text remains 18px. The header is 64px tall with 14px navigation links. Page-section links are 14px with 13px topic links and a small section label.
-- The homepage footer contains the workshop identity, host conference, location, and one enquiry address. It follows the page content and does not reserve or cover viewport space.
+- On wide screens, the homepage hero places the submission deadline and instructions to the right of the workshop title. On phones, they appear below it.
 - Stable scrollbar space keeps the header aligned when moving between short and long pages.
 - Publish all six HTML files and the complete assets directory together. Do not upload only index.html. Each shared-resource change requires updating its version on every page.
 
 - Committee listings use plain text rows without cards or borders. The Committees page title carries one inline note `(alphabetical order)`, which applies to names within every group.
 
-- Topics of Interest is one continuous list. Its page index contains only the parent Topics of Interest link.
+- Topics of Interest groups examples under five thematic headings. The page index links to the overall Topics of Interest section.

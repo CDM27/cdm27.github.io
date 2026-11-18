@@ -34,7 +34,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
 /* The photograph stays intact. Overscan crops the scan borders at every width. */
 .hero::before { content: ""; position: absolute; inset: 0; z-index: -2; background: url("washington-dc.jpg?v=20261108") center 45% / cover no-repeat; transform: scale(1.12); filter: saturate(.78) contrast(1.04); }
 .hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(12,30,45,.86), rgba(12,30,45,.58)); }
-.hero-inner { padding-block: 58px 54px; }
+.hero-inner { display: grid; row-gap: 20px; padding-block: 58px 54px; }
+.hero-copy { min-width: 0; }
 .eyebrow { margin: 0 0 12px; color: var(--blue); font-size: 17px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; line-height: 1.65; }
 h1 { margin: 0; font-weight: 600; line-height: 1.24; color: var(--navy); letter-spacing: -.025em; }
 .hero h1 { max-width: 1080px; color: #fff; }
@@ -43,10 +44,26 @@ h1 { margin: 0; font-weight: 600; line-height: 1.24; color: var(--navy); letter-
 .hero a:hover { color: #f1c4a3; }
 .hero-title-main { display: block; font-size: clamp(34px, 4.4vw, 52px); font-weight: 700; line-height: 1.18; letter-spacing: -.035em; }
 .hero-title-sub { display: block; margin-top: 9px; font-size: clamp(25px, 2.8vw, 32px); font-weight: 400; }
-.hero-subtitle { margin: 24px 0 16px; font-size: 17px; }
-.hero-meta { display: flex; flex-wrap: wrap; gap: 9px 30px; color: #e0eaf0; font-size: 18px; }
-.hero-meta p { margin: 0; }
-.hero-meta p span { display: inline-block; margin-right: 8px; color: #d0dfe7; font-size: 17px; font-weight: 600; }
+.hero-subtitle { margin: 24px 0 0; font-size: 17px; }
+.hero-submission { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; }
+.hero-deadline { margin: 0; font-size: 18px; line-height: 1.5; }
+.hero-deadline span { display: block; color: #d0dfe7; font-size: 16px; }
+.hero-deadline time { font-weight: 700; }
+.hero .hero-submission-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 9px 16px;
+  border-radius: 2px;
+  background: #f2e2d6;
+  color: var(--navy);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-decoration: none;
+}
+.hero .hero-submission-link:hover { background: #fff; color: var(--navy); }
+.hero-submission-link:focus-visible { outline-color: #f1c4a3; }
 .page-layout { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 64px; align-content: start; padding-block: 46px 64px; }
 .main-column, .sidebar { min-width: 0; }
 .section { margin-bottom: 38px; }
@@ -73,6 +90,8 @@ strong { font-weight: 600; }
 .sidebar-section + .sidebar-section { border-top: 1px solid var(--line); padding-top: 25px; }
 .sidebar h2 { font-size: 22px; margin-bottom: 15px; }
 .sidebar p { margin-bottom: 12px; }
+.sidebar .submission-contact { margin: 16px 0 0; }
+.submission-contact span { display: block; color: var(--muted); }
 .dates-panel { background: var(--wash); border-top: 3px solid var(--blue); padding: 21px; }
 .dates-panel h2 { border: 0; padding-bottom: 0; }
 .dates-list { margin: 0; }
@@ -148,24 +167,18 @@ a.person-name:hover { color: var(--blue); text-decoration: underline; }
 .attendance-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; margin-bottom: 35px; }
 .attendance-grid .section { margin: 0; }
 .attendance-grid h2 { font-size: 23px; }
-/* Homepage footer follows the page content. */
-.site-footer { flex-shrink: 0; background: #fff; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
-.footer-inner { min-height: 82px; padding-block: 14px; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 12px 32px; line-height: 1.5; }
-.footer-inner p { margin: 0; }
-.footer-heading { display: flex; flex-wrap: wrap; align-items: baseline; gap: 3px 13px; }
-.footer-name { flex: 0 0 auto; color: var(--navy); text-decoration: none; font-size: 14px; font-weight: 700; letter-spacing: .01em; }
-.footer-description { padding-left: 13px; border-left: 1px solid var(--line); font-size: 12px; }
-.footer-meta { margin-top: 4px !important; font-size: 12px; }
-.footer-meta a { color: var(--muted); text-decoration: none; }
-.footer-meta a:hover { color: var(--blue); text-decoration: underline; }
-.footer-separator { margin-inline: 7px; }
-.footer-contact { min-width: 0; padding-left: 28px; border-left: 1px solid var(--line); }
-.footer-label { margin-bottom: 3px !important; color: var(--muted); font-size: 10px; font-weight: 600; line-height: 1.5; letter-spacing: .1em; text-transform: uppercase; }
-.footer-email { color: var(--navy); font-size: 13px; text-decoration: none; white-space: nowrap; }
-.footer-email:hover { color: var(--blue); text-decoration: underline; }
 .skip-link { position: fixed; left: 16px; top: -100px; z-index: 200; padding: 9px 16px; background: white; color: var(--navy); }
 .skip-link:focus { top: 10px; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+@media screen and (min-width: 1120px) {
+  .hero-inner { grid-template-columns: minmax(0, 1fr) 280px; column-gap: 64px; align-items: center; }
+  .hero-submission {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-inline-start: 16px;
+    border-inline-start: 1px solid rgba(255, 255, 255, .32);
+  }
+}
 @media (max-width: 1020px) {
   .navigation { flex-wrap: wrap; }
   .nav-links { align-self: auto; width: 100%; flex-direction: column; gap: 0; padding-block: 6px 14px; }
@@ -190,7 +203,6 @@ a.person-name:hover { color: var(--blue); text-decoration: underline; }
   .container { width: calc(100% - 40px); }
   .hero-inner { padding-block: 40px; }
   .hero-title-main { font-size: 38px; }
-  .hero-meta { gap: 8px 25px; }
   .hero-subtitle { font-size: 17px; }
   .page-layout { grid-template-columns: 1fr; gap: 32px; padding-block: 32px 44px; }
   .sidebar { display: grid; grid-template-columns: 1fr 1fr; gap: 27px; border-top: 1px solid var(--line); padding-top: 28px; }
@@ -215,9 +227,7 @@ a.person-name:hover { color: var(--blue); text-decoration: underline; }
   .hero-title-sub { font-size: 26px; }
   .hero .eyebrow { font-size: 18px; }
   .hero-subtitle { margin-top: 19px; font-size: 17px; }
-  .hero-meta { display: block; font-size: 18px; }
-  .hero-meta p + p { margin-top: 6px; }
-  .hero-meta p span { min-width: 96px; font-size: 17px; margin-right: 8px; }
+  .hero-submission { flex-direction: column; align-items: flex-start; }
   .hero::after { background: linear-gradient(90deg, rgba(12,30,45,.86), rgba(12,30,45,.69)); }
   h2 { font-size: 25px; }
   .lead { font-size: 18px; }
@@ -239,21 +249,15 @@ a.person-name:hover { color: var(--blue); text-decoration: underline; }
   .announcement h2 { font-size: 24px; }
   .event-facts { gap: 15px 30px; }
   .venue-notice { padding: 22px; }
-  .footer-inner { min-height: 92px; grid-template-columns: minmax(0, 1fr); gap: 5px; padding-block: 9px; }
-  .footer-description { display: none; }
-  .footer-heading { line-height: 1.3; }
-  .footer-meta { margin-top: 2px !important; font-size: 11px; }
-  .footer-contact { display: flex; flex-wrap: wrap; gap: 2px 10px; align-items: baseline; padding-left: 0; border-left: 0; }
-  .footer-label { margin-bottom: 0 !important; font-size: 9px; }
-  .footer-email { font-size: 12px; }
 }
 @media print {
   body { display: block; min-height: 0; padding-bottom: 0; }
-  .site-header, .site-footer, .skip-link, .page-toc { display: none; }
+  .site-header, .skip-link, .page-toc { display: none; }
   .container { width: 100%; }
   .hero::before, .hero::after { display: none; }
   .hero, .page-banner, .dates-panel, .announcement { background: #fff; color: var(--ink); }
-  .hero h1, .hero .eyebrow, .hero a, .hero-meta, .hero-meta p span { color: var(--navy); }
+  .hero h1, .hero .eyebrow, .hero a, .hero-deadline span { color: var(--navy); }
+  .hero .hero-submission-link { min-height: 0; padding: 0; background: transparent; text-decoration: underline; }
   .hero-inner, .page-banner { padding-block: 16px; }
   .hero-title-main { font-size: 30px; }
   .hero-title-sub { font-size: 23px; }
