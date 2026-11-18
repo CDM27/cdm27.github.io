@@ -108,6 +108,16 @@ strong { font-weight: 600; }
   width: 2px;
   background: var(--line);
 }
+.dates-timeline > div:last-child::after {
+  content: "";
+  position: absolute;
+  inset-block-start: 13px;
+  inset-inline-start: 1px;
+  width: 10px;
+  height: 30px;
+  background: var(--line);
+  clip-path: polygon(40% 0, 60% 0, 60% 75%, 100% 75%, 50% 100%, 0 75%, 40% 75%);
+}
 .dates-timeline dt { color: var(--navy); font-size: 16px; font-weight: 600; line-height: 1.6; }
 .dates-timeline dd { margin: 2px 0 0; color: var(--navy); font-weight: 600; font-size: 19px; }
 .deadline-time { display: block; color: var(--muted); font-size: 16px; font-weight: 400; }
@@ -180,6 +190,13 @@ a.person-name:hover { color: var(--blue); text-decoration: underline; }
   .dates-timeline > div { padding: 22px 0 0; }
   .dates-timeline > div::before { inset-block-start: 0; }
   .dates-timeline > div:not(:last-child)::after { inset-block: 5px auto; inset-inline-start: 6px; width: calc(100% + 20px); height: 2px; }
+  .dates-timeline > div:last-child::after {
+    inset-block-start: 1px;
+    inset-inline-start: 6px;
+    width: 52px;
+    height: 10px;
+    clip-path: polygon(0 40%, 84% 40%, 84% 0, 100% 50%, 84% 100%, 84% 60%, 0 60%);
+  }
   .dates-timeline dt { min-block-size: 3.2em; }
 }
 @media (max-width: 1020px) {

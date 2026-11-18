@@ -69,7 +69,8 @@
     for (const item of items) {
       if (item.section.getBoundingClientRect().top <= threshold) current = item;
     }
-    if (window.scrollY + window.innerHeight >= root.scrollHeight - 4) current = items[items.length - 1];
+    const scrollRange = root.scrollHeight - window.innerHeight;
+    if (scrollRange > 4 && window.scrollY >= scrollRange - 4) current = items[items.length - 1];
     for (const item of items) {
       if (item === current) item.link.setAttribute('aria-current', 'location');
       else item.link.removeAttribute('aria-current');

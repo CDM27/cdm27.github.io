@@ -25,12 +25,12 @@ Controllable Data Memorization for Trustworthy AI (CDM 2027) 的静态网站项�
 - 六位组织者的职务为 **Program and Organisational Chairs**，按姓氏字母顺序排列。
 - Congwei Zhang 的职务为 **Web and Publicity Chair**。
 - 投稿咨询使用 **cdm27.tpc@gmail.com**，工作坊一般咨询由 **Youming Tao（tao@ccs-labs.org）** 处理。首页列出两类联系方式，投稿页展示投稿咨询邮箱。
-- Technical Program 当前保留待公布状态，不将 proposal 中的暂定议程当作正式日程发布。
+- Technical Program 显示议程和材料的预计公布日期，以及工作坊日期的待公布状态。
 - 首页首屏居中显示工作坊标题和投稿截止时间。简介和下方链接共用居中的内容栏。Important Dates 从投稿截止时间开始列出五个节点，宽屏横排、窄屏竖排。
 - 首页背景保留最新版原图，通过 CSS 放大裁切避开扫描黑边，并调整叠加层。原始照片文件未改动。
-- 六页统一引用 CSS 版本 `e467651f06f2` 和共享脚本版本 `b43b7b5dd278`。
+- 六页统一引用 CSS 版本 `eb34aafc82ca` 和共享脚本版本 `4deeda9ff2f8`。
 - 顶部导航滚动时保持可见。浏览器放大或视口宽度不超过 1020px 时，导航收为 Menu 按钮，展开为纵向列表，支持再次点击、Escape 和点击外部收起。
-- 五个内页均使用页内目录。桌面端目录保持在侧栏，小屏幕上收为导航下方的可展开目录。
+- CFP、Submission 和 Committees 使用页内目录。桌面端目录保持在侧栏，小屏幕上收为导航下方的可展开目录。
 - 正文统一为 18px，首页日期为 19px。顶部导航和页内目录为 14px，目录分组为 13px；手机和放大后的布局不缩小正文。
 - 组织者、Program Committee 和 Web and Publicity Chair 使用同一人员网格。姓名和单位分行展示，桌面三列，较窄屏幕依次收为两列和一列。
 - Technical Program 页面只保留 CDM 自身的日期状态，不展示主会时间。
@@ -113,6 +113,6 @@ python -m http.server 8000 --bind 127.0.0.1
 - Stable scrollbar space keeps the header aligned when moving between short and long pages.
 - Publish all six HTML files and the complete assets directory together. Do not upload only index.html. Each shared-resource change requires updating its version on every page.
 
-- Committee entries use a three-column grid on wide screens, with the affiliation below each name. The Committees page title carries one inline note `(alphabetical order)`, which applies to names within every group.
+- Committee entries use a three-column grid on wide screens, with the affiliation below each name. The chair roster notes that names are listed alphabetically by surname.
 
 - Topics of Interest groups examples under five thematic headings. The page index links to the overall Topics of Interest section.
