@@ -11,31 +11,32 @@ Controllable Data Memorization for Trustworthy AI (CDM 2027) 的静态网站项�
 | 文件 | 内容 |
 | --- | --- |
 | `index.html` | Workshop 简介、重要日期、征稿主题、投稿及联系入口 |
-| `cfp.html` | 完整研究范围、重要日期、投稿入口及 publication statement |
+| `cfp.html` | 完整研究范围、重要日期、投稿入口、出版说明和一页 CFP 下载 |
 | `submission.html` | CMT 入口、投稿截止时间、稿件要求、审稿流程及出版与报告说明 |
-| `organization.html` | 主席、Web and Publicity Chair、Program Committee |
+| `organization.html` | Workshop Organizers、Web and Publicity Chair、Program Committee |
 | `program.html` | Technical Program，当前保留待公布状态 |
 | `venue.html` | 地点、会议日期、旅行及参会信息 |
 | `assets/style.css` | 六页共用的配色、排版、响应式及打印样式 |
 | `assets/site.js` | 导航高度同步、CFP 目录的当前位置标记及小屏折叠 |
 | `assets/washington-dc.jpg` | 最新版项目提供的 Washington, DC 照片 |
+| `assets/CDM-2027-Call-for-Papers.pdf` | CFP 页提供的一页打印版 |
 
 ## 已采用的内容约定
 
-- 六位组织者的职务为 **Program and Organisational Chairs**，按姓氏字母顺序排列。
+- **Workshop Organizers** 下的六位组织者按姓氏字母顺序排列。
 - Congwei Zhang 的职务为 **Web and Publicity Chair**。
 - 投稿咨询使用 **cdm27.tpc@gmail.com**，工作坊一般咨询由 **Youming Tao（tao@ccs-labs.org）** 处理。首页列出两类联系方式，投稿页展示投稿咨询邮箱。
 - Technical Program 显示议程和材料的预计公布日期，以及工作坊日期的待公布状态。
-- 首页首屏居中显示工作坊标题和投稿截止时间。简介和下方链接共用居中的内容栏。Important Dates 从投稿截止时间开始列出五个节点，宽屏横排、窄屏竖排。
+- 首页首屏居中显示工作坊标题和投稿截止时间。简介和下方链接共用居中的内容栏。Important Dates 从投稿截止时间到 ACM TRUST 2027 主会列出五个节点，宽屏横排、窄屏竖排。
 - 首页背景保留最新版原图，通过 CSS 放大裁切避开扫描黑边，并调整叠加层。原始照片文件未改动。
-- 六页统一引用 CSS 版本 `eb34aafc82ca` 和共享脚本版本 `4deeda9ff2f8`。
+- 六页统一引用 CSS 版本 `f814e3cf049d` 和共享脚本版本 `4deeda9ff2f8`。
 - 顶部导航滚动时保持可见。浏览器放大或视口宽度不超过 1020px 时，导航收为 Menu 按钮，展开为纵向列表，支持再次点击、Escape 和点击外部收起。
 - CFP、Submission 和 Committees 使用页内目录。桌面端目录保持在侧栏，小屏幕上收为导航下方的可展开目录。
 - 正文统一为 18px，首页日期为 19px。顶部导航和页内目录为 14px，目录分组为 13px；手机和放大后的布局不缩小正文。
 - 组织者、Program Committee 和 Web and Publicity Chair 使用同一人员网格。姓名和单位分行展示，桌面三列，较窄屏幕依次收为两列和一列。
 - Technical Program 页面只保留 CDM 自身的日期状态，不展示主会时间。
 - 成员单位后标注所在国家或地区，单位的完整名称保留在悬停提示中。
-- 委员会按 Program and Organisational Chairs、Program Committee、Web and Publicity Chair 排列。后续 PC 使用相同的 people-list 样式。
+- 委员会按 Workshop Organizers、Program Committee、Web and Publicity Chair 排列。后续 PC 使用相同的 people-list 样式。
 
 PC 名单公布后，使用以下结构填写姓名、单位和主页：
 
@@ -54,13 +55,12 @@ PC 名单公布后，使用以下结构填写姓名、单位和主页：
 
 | 项目 | 当前状态 | 更新位置 |
 | --- | --- | --- |
-| Paper camera-ready deadline | 待公布 | 首页和 CFP |
-| Workshop 具体日期、时段、会场和会议室 | 待公布 | 首页 Important Dates、Program 和 Venue |
+| Workshop 具体日期、时段、会场和会议室 | 待公布 | Program 和 Venue |
 | Program Committee | 待公布 | `organization.html` |
 | Technical Program、讲者和论文名单 | 待公布 | `program.html` |
 | 注册、交通、酒店和参会方式 | 待公布 | `venue.html` |
 
-当前保留原项目设定的投稿截止日期 **December 17, 2026** 和通知日期 **January 15, 2027**。投稿截止时间按 TRUST 主会作者指南采用 **23:59 Pacific Standard Time (PST, UTC−8)**，对应 HTML `datetime="2026-12-17T23:59:00-08:00"`。修改时请同步首页、CFP 和 Submission。**February 5, 2027** 是 Program and Materials 日期。会议方的 **February 1** workshop-summary 截止日期属于组织者提交材料的节点，不能代替论文 camera-ready 日期。
+CDM 投稿截止日期为 **December 17, 2026**，录用通知日期为 **January 15, 2027**，论文终稿截止日期为 **January 31, 2027**，议程及材料发布日期为 **February 5, 2027**。投稿截止时间为 **23:59 Pacific Standard Time (PST, UTC−8)**，对应 HTML `datetime="2026-12-17T23:59:00-08:00"`。更新投稿截止时间时请同步首页、CFP、Submission 和一页 PDF。**March 7–9, 2027** 是 ACM TRUST 2027 主会日期，列在首页、CFP、Venue 和一页 PDF 上。
 
 CFP 中的 publication statement 按 proposal 和会议要求保留：录用论文将被考虑收入 proceedings，不应改写成所有录用论文均保证发表。
 
