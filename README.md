@@ -54,13 +54,13 @@ PC 成员卡片沿用以下结构，加入已确认的姓名、单位和主页�
 
 | 项目 | 当前状态 | 更新位置 |
 | --- | --- | --- |
-| Paper camera-ready deadline | 待公布 | 首页、CFP 和 Submission |
+| Paper camera-ready deadline | January 31, 2027 | 首页、CFP 和 Submission |
 | Workshop 具体日期、时段、会场和会议室 | 待公布 | 首页 Hero、日期区域、Program 和 Venue |
 | Program Committee | 待公布 | `organization.html` |
 | Technical Program、讲者和论文名单 | 待公布 | `program.html` |
 | 注册、交通、酒店和参会方式 | 待公布 | `venue.html` |
 
-当前保留原项目设定的投稿截止日期 **December 17, 2026** 和通知日期 **January 15, 2027**。投稿截止时间按 TRUST 主会作者指南采用 **23:59 Pacific Standard Time (PST, UTC−8)**，对应 HTML `datetime="2026-12-17T23:59:00-08:00"`。修改时请同步首页、CFP 和 Submission。**February 5, 2027** 是 Program and Materials 日期。会议方的 **February 1** workshop-summary 截止日期属于组织者提交材料的节点，不能代替论文 camera-ready 日期。
+按 workshop 征稿海报，投稿截止日期为 **December 24, 2026**，通知日期为 **January 15, 2027**，论文 camera-ready 截止日期为 **January 31, 2027**。投稿截止时间按 TRUST 主会作者指南采用 **23:59 Pacific Standard Time (PST, UTC−8)**，对应 HTML `datetime="2026-12-24T23:59:00-08:00"`。修改时请同步首页、CFP 和 Submission。**February 5, 2027** 是 Program and Materials 日期。会议方的 **February 1** workshop-summary 截止日期属于组织者提交材料的节点，不能代替论文 camera-ready 日期。
 
 CFP 中的 publication statement 按 proposal 和会议要求保留：录用论文将被考虑收入 proceedings，不应改写成所有录用论文均保证发表。
 
